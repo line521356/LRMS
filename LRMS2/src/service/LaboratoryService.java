@@ -1,0 +1,17 @@
+package service;
+
+import java.util.List;
+
+import entity.Laboratory;
+
+public interface LaboratoryService {
+		public int addLab(Laboratory laboratory);
+
+		public List<Laboratory> getAllLab();
+
+		public boolean delLab(Laboratory laboratory);
+
+		public Laboratory getLabById(Laboratory laboratory);
+
+		public boolean updateLab(Laboratory laboratory);
+}

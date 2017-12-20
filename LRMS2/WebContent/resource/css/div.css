@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+#head{ /*页面顶部*/
+	position:absolute;
+	top:7.5%;
+	left:50%;
+	width:50%;
+	height:5%;
+	}
+.left{ /*页面左部*/
+	position:absolute;
+	top:12%;
+	left:1%;
+	width:15%;
+	height:79%;
+	border-right:4px solid #3e6262 
+	}
+.content{ /*页面内容部分*/
+	position:absolute;
+	top:12%;
+	left:18%;
+	width:82.5%;
+	height:79%;
+	}
+#foot{ /*页面底部*/
+	position:absolute;
+	top:95%;
+	width:99%;
+	
+	}
+#hr1{/*页面中的水平线*/
+	position:absolute;
+	top:89.1%;
+	width:99%;
+	height:4px;
+	border:none;
+	border-top:4px solid #3e6262;
+	z-index:999;
+	}
+.div-form{
+	vertical-align:middle;
+    padding:10px 10px;
+}
+input[type="text"]{
+	 width:180px;
+    text-align:middle;
+}
+span{
+    width:50px;
+    text-align:middle;
+}
+.selectCourseDiv{
+	position:absolute;
+	top:12%;
+	left:60%;
+	width:39.5%;
+	height:79%;
+	border-left:4px solid #3e6262
+}
+.contentLeftDiv{
+	position:absolute;
+	top:12%;
+	left:18%;
+	width:39.5%;
+	height:79%;
+	
+}
+.contentRightDiv{
+	position:absolute;
+	top:12%;
+	left:60%;
+	width:39.5%;
+	height:79%;
+	border-left:4px solid #3e6262
+}
+table.hovertable {
+font-family: verdana,arial,sans-serif;
+font-size:11px;
+color:#333333;
+border-width: 1px;
+border-color: #999999;
+border-collapse: collapse;
+}
+table.hovertable th {
+background-color:#c3dde0;
+border-width: 1px;
+padding: 8px;
+border-style: solid;
+border-color: #a9c6c9;
+}
+table.hovertable tr {
+background-color:#d4e3e5;
+}
+table.hovertable td {
+border-width: 1px;
+padding: 8px;
+border-style: solid;
+border-color: #a9c6c9;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>LRMS</display-name>
+  <welcome-file-list>
+    <welcome-file>jsp/login.jsp</welcome-file>
+  </welcome-file-list>
+  
+    <!-- 监听spring上下文容器 -->  
+    <listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>  
+    <listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>	
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	    
+    <!-- 加载spring的xml配置文件到 spring的上下文容器中 -->  
+    <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>classpath:ApplicationContext.xml</param-value>  
+    </context-param>   
+  
+  	<!-- 配置spring先配置一个servlet,然后 加载LRMS的xml文件到Spring的上下文中。
+  		然后配置servlet-mapping，servlet-name为刚刚的servlet中的配置的name，然后指定要拦截的url为/
+  	-->
+  	<servlet>
+	  	<servlet-name>LRMS</servlet-name>
+	  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	 	<!-- 初始化参数 ,加载LRMS的xml到 spring的上下文容器中 -->  
+	  	<init-param>
+	  		<param-name>contextConfigLocation</param-name>
+	  		<param-value>classpath:spring-mvc.xml</param-value>
+	  	</init-param>
+  		<load-on-startup>1</load-on-startup>
+  	</servlet>
+   	<!-- 配置DispatcherServlet所需要拦截的 url -->  
+  	<servlet-mapping>
+	  	<servlet-name>LRMS</servlet-name>
+	  	<url-pattern>/</url-pattern> 	
+  	</servlet-mapping>
+  
+ 	<filter>
+	  	<filter-name>encodingFilter</filter-name>
+	  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	 	<init-param>
+	  		<param-name>encoding</param-name>
+	  		<param-value>UTF-8</param-value>
+	  	</init-param>
+	  	<init-param>
+	  		<param-name>forceEncoding</param-name>
+	  		<param-value>true</param-value>
+	  	</init-param>
+  	</filter>
+  	<filter-mapping>
+	  	<filter-name>encodingFilter</filter-name>
+	  	<url-pattern>/*</url-pattern> 
+  	</filter-mapping>
+</web-app>
